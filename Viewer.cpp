@@ -10,6 +10,8 @@ Viewer::Viewer(QQuickItem *parent)
     int lastSlashIndex = sourceCodePath.lastIndexOf('/');
     sourceCodePath = sourceCodePath.left(lastSlashIndex);
 
+    qDebug()<<__FUNCTION__ << "## source Path =" <<sourceCodePath; ///////// add debug
+
     // Append the image file path relative to the source code directory
     QString imagePath = sourceCodePath + "/L_Teraphy/image/1.jpg";
 
