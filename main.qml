@@ -10,5 +10,11 @@ ApplicationWindow {
     Viewer {
         id:viewer
         anchors.fill: parent
+
+        Component.onCompleted: {
+            console.log(" viewer completed")
+            viewer.openViewer()
+
+        }
     }
 }

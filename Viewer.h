@@ -6,9 +6,11 @@
 #include <QFileInfo>
 
 #include <QImage>
-#include <QPixmap> // QPixmap 헤더 추가
-#include <opencv2/core.hpp>
-#include <opencv2/highgui.hpp>
+#include <opencv2/opencv.hpp>
+#include "DetectSegmentation.h"
+#include "BackGround.h"
+
+using namespace cv;
 
 class Viewer: public QQuickPaintedItem
 {
@@ -22,11 +24,17 @@ public:
     QImage getImage() const;
     void paint(QPainter *painter) override;
 
+    Q_INVOKABLE void openViewer();
+
 signals:
     void imageChanged();
 
 private:
     QImage m_image;
+
+    void TestopenCV();
+    void TestopenCV2();
+
 };
 
 #endif // VIEWER_H
