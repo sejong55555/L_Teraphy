@@ -17,6 +17,10 @@ SOURCES += \
         BackGround.cpp \
         DetectSegmentation.cpp \
         Viewer.cpp \
+        Viewer1.cpp \
+        Viewer2.cpp \
+        Viewer3.cpp \
+        Viewer4.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -39,4 +43,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     BackGround.h \
     DetectSegmentation.h \
-    Viewer.h
+    Viewer.h \
+    Viewer1.h \
+    Viewer2.h \
+    Viewer3.h \
+    Viewer4.h

@@ -1,8 +1,13 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include "Viewer.h"
 #include <QDebug>
+
+#include "Viewer.h"
+#include "Viewer1.h"
+#include "Viewer2.h"
+#include "Viewer3.h"
+#include "Viewer4.h"
 
 int main(int argc, char *argv[])
 {
@@ -10,6 +15,10 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     qmlRegisterType<Viewer>("Viewer", 1, 0, "Viewer");
+    qmlRegisterType<Viewer1>("Viewer1", 1, 0, "Viewer1");
+    qmlRegisterType<Viewer2>("Viewer2", 1, 0, "Viewer2");
+    qmlRegisterType<Viewer3>("Viewer3", 1, 0, "Viewer3");
+    qmlRegisterType<Viewer4>("Viewer4", 1, 0, "Viewer4");
 
     QQmlApplicationEngine engine;
 

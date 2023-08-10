@@ -1,25 +1,23 @@
-#ifndef VIEWER_H
-#define VIEWER_H
-//#include <QQuickItem>
+#ifndef VIEWER4_H
+#define VIEWER4_H
+
 #include <QQuickPaintedItem>
 #include <QPainter>
 #include <QFileInfo>
 
 #include <QImage>
 #include <opencv2/opencv.hpp>
-#include "DetectSegmentation.h"
-#include "BackGround.h"
 
 using namespace cv;
 
-class Viewer: public QQuickPaintedItem
+class Viewer4: public QQuickPaintedItem
 {
     Q_OBJECT
     Q_PROPERTY(QImage image READ getImage NOTIFY imageChanged)
 
 public:
-    Viewer(QQuickItem *parent = nullptr);
-    ~Viewer();
+    Viewer4(QQuickItem *parent = nullptr);
+    ~Viewer4();
 
     QImage getImage() const;
     void paint(QPainter *painter) override;
@@ -33,8 +31,5 @@ signals:
 private:
     QImage m_image;
 
-    void TestopenCV();
-
 };
-
-#endif // VIEWER_H
+#endif // VIEWER4_H
