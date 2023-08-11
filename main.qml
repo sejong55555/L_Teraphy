@@ -5,6 +5,7 @@ import Viewer1 1.0
 import Viewer2 1.0
 import Viewer3 1.0
 import Viewer4 1.0
+import QtMultimedia 5.12
 
 
 ApplicationWindow {
@@ -58,8 +59,60 @@ ApplicationWindow {
         }
     }
 
+    /*
+    property int currentIndex: 0
+    property var imagePaths: ["img1.jpg", "img2.jpg", "img3.jpg"]
+
+    Image {
+        id: background
+        anchors.fill: parent
+        source: "file:///home/sejong/Work/Lteraphy/L_Teraphy/image/background/"+imagePaths[currentIndex]
+
+        Timer {
+            interval: 1000 // 1초마다
+            running: true
+            repeat: true
+
+            onTriggered: {
+                currentIndex = (currentIndex + 1) % imagePaths.length;
+                background.source = "file:///home/sejong/Work/Lteraphy/L_Teraphy/image/background/" + imagePaths[currentIndex];
+            }
+        }
+    }
+
+    */
+
     Item {
-        id: control
+        id:mediaplay_contorl
+        anchors.fill: parent
+
+        MediaPlayer {
+            id: mediaPlayer
+            source: "file:///home/sejong/Work/Lteraphy/L_Teraphy/image/background/LESSERAFIM.mp4"
+
+            onPlaybackStateChanged: {
+                if (playbackState === 0/*MediaPlayer.EndOfMediaState*/) {
+                    mediaPlayer.seek(0);
+                    mediaPlayer.play();
+                }
+            }
+        }
+
+        VideoOutput {
+            id: videoOutput
+            anchors.fill: parent
+            source: mediaPlayer
+        }
+
+        Component.onCompleted: {
+            mediaPlayer.muted =true
+            mediaPlayer.play()
+        }
+    }
+
+
+    Item {
+        id: view_control
         width: 640
         height: 480
 
@@ -122,6 +175,8 @@ ApplicationWindow {
             }
         }
     }
+
+
 
 /*
     Button {
