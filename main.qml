@@ -116,30 +116,45 @@ ApplicationWindow {
         width: 640
         height: 480
 
+
         Viewer {
             id:viewer
-            anchors.fill: parent
+            //anchors.fill: parent
+            x:20
+            y:100
+            width: 600
+            height: 600
 
             Component.onCompleted: {
                 console.log(" viewer completed")
                 viewer.openViewer()
-                viewer.doWork("/home/sejong/Work/Lteraphy/L_Teraphy/image/0.PNG")
+                //viewer.doWork("/home/sejong/Work/Lteraphy/L_Teraphy/image/0.PNG")
+                //viewer.doWork("/home/sejong/Work/Lteraphy/L_Teraphy/image/test.PNG")
+                //viewer.doWork("/home/sejong/Work/Lteraphy/L_Teraphy/image/btn_Camera_B_on.png")
+                viewer.doWork("/home/sejong/Work/Lteraphy/L_Teraphy/image/img_car_01.png")
 
             }
         }
 
+
         Viewer1 {
             id:viewer1
-            anchors.fill: parent
+            //anchors.fill: parent
+            x:20
+            y:100
+            width: 600
+            height: 600
 
             Component.onCompleted: {
                 console.log(" viewer completed")
                 viewer1.openViewer()
-                viewer1.doWork("/home/sejong/Work/Lteraphy/L_Teraphy/image/1.PNG")
+                //viewer1.doWork("/home/sejong/Work/Lteraphy/L_Teraphy/image/1.PNG")
+                viewer1.doWork("/home/sejong/Work/Lteraphy/L_Teraphy/image/test.png")
 
             }
         }
 
+        /*
         Viewer2 {
             id:viewer2
             anchors.fill: parent
@@ -174,6 +189,8 @@ ApplicationWindow {
 
             }
         }
+        */
+
     }
 
 
@@ -213,7 +230,14 @@ ApplicationWindow {
     }
 
     Component.onCompleted: {
-        timer.start()
+        //timer.start()
+
+        //opencv test, save a png file
+        viewer.z =1
+        viewer1.z =0
+        viewer2.z =0
+        viewer3.z =0
+        viewer4.z =0
     }
 
 }

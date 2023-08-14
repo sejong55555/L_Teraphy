@@ -21,6 +21,7 @@ SOURCES += \
         Viewer2.cpp \
         Viewer3.cpp \
         Viewer4.cpp \
+        cvtopng.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -47,4 +48,5 @@ HEADERS += \
     Viewer1.h \
     Viewer2.h \
     Viewer3.h \
-    Viewer4.h
+    Viewer4.h \
+    cvtopng.h
