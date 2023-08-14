@@ -9,6 +9,7 @@
 #include "Viewer3.h"
 #include "Viewer4.h"
 #include "cvtopng.h"
+#include "InterfaceManager.h"
 
 int main(int argc, char *argv[])
 {
@@ -20,9 +21,9 @@ int main(int argc, char *argv[])
     qmlRegisterType<Viewer2>("Viewer2", 1, 0, "Viewer2");
     qmlRegisterType<Viewer3>("Viewer3", 1, 0, "Viewer3");
     qmlRegisterType<Viewer4>("Viewer4", 1, 0, "Viewer4");
-    CVtoPNG png; //temp
 
     QQmlApplicationEngine engine;
+    InterfaceManager *interfaceManager = new InterfaceManager;
 
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));

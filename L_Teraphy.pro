@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         BackGround.cpp \
         DetectSegmentation.cpp \
+        InterfaceManager.cpp \
         Viewer.cpp \
         Viewer1.cpp \
         Viewer2.cpp \
@@ -44,6 +45,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     BackGround.h \
     DetectSegmentation.h \
+    InterfaceManager.h \
     Viewer.h \
     Viewer1.h \
     Viewer2.h \

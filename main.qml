@@ -116,7 +116,7 @@ ApplicationWindow {
         width: 640
         height: 480
 
-
+        /*
         Viewer {
             id:viewer
             //anchors.fill: parent
@@ -135,6 +135,7 @@ ApplicationWindow {
 
             }
         }
+        */
 
 
         Viewer1 {
