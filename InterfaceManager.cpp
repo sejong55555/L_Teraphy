@@ -17,9 +17,6 @@ InterfaceManager::InterfaceManager(QObject *parent) :
         }
     });
     emit mPng->start("");
-
-    //mPng->WritePNGText(" have a good day ", "/home/sejong/Work/Lteraphy/L_Teraphy/image/test.png", 300,400);
-
 }
 
 InterfaceManager::~InterfaceManager()
