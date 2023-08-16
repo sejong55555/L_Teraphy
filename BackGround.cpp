@@ -4,16 +4,6 @@ using namespace cv;
 
 BackGround::BackGround(cv::Mat img_color)
 {
-
-    //Mat image = imread("/home/sejong/Work/Lteraphy/L_Teraphy/image/walk_540.jpg");
-    //namedWindow("TestImage", WINDOW_AUTOSIZE);
-    //imshow("TestImage",image);
-    //waitKey();
-    //destroyWindow("TestImage");
-
-
-
-
     cv::cvtColor(img_color, img_color, cv::COLOR_BGR2RGB);
     cv::Mat img_color_cv = img_color;
 

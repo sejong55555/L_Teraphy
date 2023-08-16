@@ -1,4 +1,5 @@
 #include "cvtopng.h"
+#include "Global.h"
 
 CVtoPNG::CVtoPNG(QObject *parent) :
     QObject(parent)
@@ -8,14 +9,12 @@ CVtoPNG::CVtoPNG(QObject *parent) :
 
 void CVtoPNG::doPngThread(const QString &msg)
 {
-    qDebug()<<"########################################################################3";
     QString str[5]={"Have a good day", "You will do well","Luck is with you","Like the first time","Let's do our best"};
     int i=0;
 
     while (1) {
-        qDebug()<<"#";
-        //WritePNGText(str[i], "/home/sejong/Work/Lteraphy/L_Teraphy/image/test.png", 300,400);
-        WritePNGText(str[i],QString("/home/sejong/Work/Lteraphy/L_Teraphy/image/%1.png").arg(i),300,400);
+        //qDebug()<<"#";
+        WritePNGText(str[i],QString(WORK_PATH_TXT_IMAGE).arg(i),300,400);
         QThread::msleep(1000);
         emit writeCompleted();
 

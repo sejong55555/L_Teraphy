@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QDebug>
+#include <QDir>
 
 #include "Viewer.h"
 #include "Viewer1.h"
@@ -10,6 +11,7 @@
 #include "Viewer4.h"
 #include "cvtopng.h"
 #include "InterfaceManager.h"
+#include "Global.h"
 
 static QObject *UserInstance(QQmlEngine *engine, QJSEngine *scriptEngine)
 {

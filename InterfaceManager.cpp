@@ -1,5 +1,6 @@
 #include "InterfaceManager.h"
 
+
 InterfaceManager* InterfaceManager::mInstance = NULL;
 
 InterfaceManager::InterfaceManager(QObject *parent) :
@@ -35,8 +36,17 @@ void InterfaceManager::handleWriteCompleted()
 {    
     if(count>4) count =0;
 
-    qDebug()<<__FUNCTION__<<count;
-    emit sigWriteDone(count);
+    //qDebug()<<__FUNCTION__<<count;
+    if(0 == count)
+        emit sigWriteDone(count,WORK_PATH_TXT_IMAGE_0);
+    else if(1 ==count)
+        emit sigWriteDone(count,WORK_PATH_TXT_IMAGE_1);
+    else if(2 ==count)
+        emit sigWriteDone(count,WORK_PATH_TXT_IMAGE_2);
+    else if(3 ==count)
+        emit sigWriteDone(count,WORK_PATH_TXT_IMAGE_3);
+    else
+        emit sigWriteDone(count,WORK_PATH_TXT_IMAGE_4);
     count++;
 }
 

@@ -45,6 +45,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     BackGround.h \
     DetectSegmentation.h \
+    Global.h \
     InterfaceManager.h \
     Viewer.h \
     Viewer1.h \

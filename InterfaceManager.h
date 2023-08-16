@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QThread>
 #include "cvtopng.h"
+#include "Global.h"
 
 class InterfaceManager: public QObject
 {
@@ -22,7 +23,7 @@ private:
     int count =1;
 
 signals:
-    void sigWriteDone(int index);
+    void sigWriteDone(int index, QString file);
 
 public slots:
     void handleWriteCompleted();
