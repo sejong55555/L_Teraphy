@@ -54,31 +54,6 @@ void Viewer::doWork(QString filePath)
     m_image = qImage.copy(); // Create a deep copy of the QImage
 
     qDebug() << __FUNCTION__ << "Signal Send image Changed";
-    emit imageChanged();
-}
-
-void Viewer::openViewer()
-{
-    qDebug()<<__FUNCTION__;
-
-    //TestopenCV();
-}
-
-
-void Viewer::TestopenCV()
-{
-    cv::Mat image =imread("/home/sejong/Work/Lteraphy/L_Teraphy/image/2.jpeg", IMREAD_COLOR);
-    if (image.empty()) {
-        qWarning("Failed to load image");
-        return;
-    }
-
-    // Convert cv::Mat to QImage
-    cv::cvtColor(image, image, cv::COLOR_BGR2RGB); // Swap BGR to RGB
-    QImage qImage(image.data, image.cols, image.rows, static_cast<int>(image.step), QImage::Format_RGB888);
-    m_image = qImage.copy(); // Create a deep copy of the QImage
-
-    qDebug()<<__FUNCTION__<<"Signal Send image Changed";
-    emit imageChanged();
+    update();
 }
 

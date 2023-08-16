@@ -11,6 +11,18 @@
 #include "cvtopng.h"
 #include "InterfaceManager.h"
 
+static QObject *UserInstance(QQmlEngine *engine, QJSEngine *scriptEngine)
+{
+    Q_UNUSED(engine)
+    Q_UNUSED(scriptEngine)
+
+    //qDebug() << "Creating";
+
+    InterfaceManager *interfaceManager = InterfaceManager::getInstance();
+
+    return interfaceManager;
+}
+
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -23,8 +35,9 @@ int main(int argc, char *argv[])
     qmlRegisterType<Viewer4>("Viewer4", 1, 0, "Viewer4");
 
     QQmlApplicationEngine engine;
-    InterfaceManager *interfaceManager = new InterfaceManager;
 
+    InterfaceManager *interfaceManager = new InterfaceManager;
+    qmlRegisterSingletonType<InterfaceManager>("interfaceManager", 1, 0, "InterfaceManager", UserInstance);
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

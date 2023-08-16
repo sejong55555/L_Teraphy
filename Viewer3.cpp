@@ -49,10 +49,5 @@ void Viewer3::doWork(QString filePath)
     m_image = qImage.copy(); // Create a deep copy of the QImage
 
     qDebug() << __FUNCTION__ << "Signal Send image Changed";
-    emit imageChanged();
-}
-
-void Viewer3::openViewer()
-{
-    qDebug()<<__FUNCTION__;
+    update();
 }

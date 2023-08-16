@@ -20,6 +20,7 @@ public slots:
 signals:
     void start(const QString &);
     void resultReady(const QString &result);
+    void writeCompleted();
 };
 
 #endif // CVTOPNG_H

@@ -17,6 +17,8 @@ void CVtoPNG::doPngThread(const QString &msg)
         //WritePNGText(str[i], "/home/sejong/Work/Lteraphy/L_Teraphy/image/test.png", 300,400);
         WritePNGText(str[i],QString("/home/sejong/Work/Lteraphy/L_Teraphy/image/%1.png").arg(i),300,400);
         QThread::msleep(1000);
+        emit writeCompleted();
+
         i++;
         if(i>4) i=0;
     }
@@ -29,8 +31,6 @@ int CVtoPNG::WritePNGText(QString str, QString path, unsigned int width, unsigne
     // 이미지에 RED 텍스트 추가 (알파 채널 값은 255로 설정하여 완전 불투명하게)
     cv::putText(image, str.toStdString(), cv::Point(50, 150), cv::FONT_HERSHEY_SIMPLEX, 1.0, cv::Scalar(0, 0, 255, 255), 4);
     //cvtColor(image, image, cv::COLOR_BGRA2RGBA); // Convert BGR to RGBA
-
-    qDebug()<<"png text writing";
 
     // 녹색 부분의 알파 채널 값을 0으로 설정하여 투명하게 만듦
     for (int y = 0; y < image.rows; ++y) {
@@ -49,10 +49,10 @@ int CVtoPNG::WritePNGText(QString str, QString path, unsigned int width, unsigne
     bool success = imwrite(spath, image);
 
     if (success) {
-        qDebug() << "PNG file saved successfully." ;
+        qDebug() << path+"  file saved successfully." ;
         return 0;
     } else {
-        qDebug() << "Failed to save PNG file.";
+        qDebug() << path+"  Failed to save PNG file.";
         return -1;
     }
 

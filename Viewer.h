@@ -24,7 +24,6 @@ public:
     QImage getImage() const;
     void paint(QPainter *painter) override;
 
-    Q_INVOKABLE void openViewer();
     Q_INVOKABLE void doWork(QString filePath);
 
 signals:
@@ -32,8 +31,6 @@ signals:
 
 private:
     QImage m_image;
-
-    void TestopenCV();
 
 };
 
